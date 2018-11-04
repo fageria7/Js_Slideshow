@@ -1,0 +1,34 @@
+<script type="text/javascript">
+	
+	var i = 0; //start point
+	var images = [];
+	var time = 1000;
+
+	//image List
+	images[0] = "img/img1.jpg";
+	images[1] = "img/img2.jpg";
+	images[2] = "img/img3.jpeg";
+	images[3] = "img/img4.jpg";
+
+	// Change Image
+	function changeImg(){
+		document.slide.src = images[i];
+
+		// Check If Index Is Under Max
+		if(i < images.length - 1){
+		  // Add 1 to Index
+		  i++; 
+		} else { 
+			// Reset Back To O
+			i = 0;
+		}
+
+		// Run function every x seconds
+		setTimeout("changeImg()", time);
+	}
+
+	// Run function when page loads
+	window.onload=changeImg;
+</script>
+
+<img name="slide" width="400" height="200" />
